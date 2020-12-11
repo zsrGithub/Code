@@ -1,0 +1,17 @@
+/* start.wxss */
+
+
+.btn1{
+  width: 60%;
+  border-radius: 20px;
+  border:black;
+  color:#325478
+  
+}
+page{
+  background-color: #86cfa2
+}
+page{
+  height:100%;
+}
+

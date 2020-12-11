@@ -1,0 +1,12 @@
+<!--start.wxml-->
+
+
+<button class="btn1" bindtap="navigate">点我查看温度</button>
+<view><image src="/zhiwu.jpg">
+</image>
+</view>
+
+
+<button class="btn1" bindtap="navigate1">点我查看湿度</button>
+<button class="btn1" bindtap="navigate2">养护植物小知识</button>
+

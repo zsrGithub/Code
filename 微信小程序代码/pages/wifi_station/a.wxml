@@ -1,0 +1,14 @@
+<button class="btn1" bindtap="navigate">点我查看温度</button>
+<view class="content">
+	
+	<image class='background' src="/rain.jpg" mode="aspectFill"></image>
+	
+</view>
+<view class="sstyle">
+  湿度
+</view>
+<view class="sstyle">{{result}}</view>
+<view wx:if="{{result>20}}" class="sstyle">该浇水啦</view>
+
+
+

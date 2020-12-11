@@ -1,0 +1,16 @@
+<button class="btn1" bindtap="navigate1">点我查看湿度</button>
+<view class="content">
+	<!--pics文件夹下的background.jpg文件-->
+	<image class='background' src="/goodyun.jpg" mode="aspectFill"></image>
+	<!--页面其它部分-->
+
+</view>
+
+  <view class="style">
+  温度
+</view>
+
+
+<view class="style">{{result}}</view>
+<view wx:if="{{result>20}}" class="style">该降温啦</view>
+

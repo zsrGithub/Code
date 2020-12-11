@@ -1,0 +1,11 @@
+/* pages/wifi_station/tianqi/knowledge.wxss */
+page{
+  background-color: #5b96ad
+}
+.beautiful{
+
+  margin: 30rpx;
+  padding: 70rpx;
+  font-size:20px;
+  color:#044d88
+}
