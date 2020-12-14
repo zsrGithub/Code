@@ -1,5 +1,5 @@
-const devicesId = "11111111" // 填写在OneNet上获得的devicesId 形式就是一串数字 
-const api_key = "dfsdfj,dsmfbda,g" // 填写在OneNet上的 api-key 
+const devicesId = "987654321" // 填写在OneNet上获得的devicesId 形式就是一串数字 
+const api_key = "********" // 填写在OneNet上的 api-key 
 
 Page({
   data: {
@@ -29,13 +29,13 @@ Page({
   onLoad: function () {
     console.log(`your deviceId: ${devicesId}, apiKey: ${api_key}`)
 
-    //每隔6s自动获取一次数据进行更新
+    //将onenet上的数据打印到控制台
     const timer = setInterval(() => {
       this.getDatapoints().then(datapoints => {
         
         console.log(datapoints)
         this.setData({
-          result:datapoints.temperature[18].value
+          result:datapoints.temperature[18].value   //得到温度数据，与wxml中数据绑定 ，显示在小程序前端
           
         })
         
@@ -47,7 +47,7 @@ Page({
 
     
   },
-  navigate1: function() {
+  navigate1: function() {   //页面跳转到查看湿度的页面
     wx.navigateTo({
         url: '../a',
     })
