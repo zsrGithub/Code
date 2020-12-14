@@ -1,14 +1,14 @@
-<button class="btn1" bindtap="navigate">点我查看温度</button>
-<view class="content">
+<button class="btn1" bindtap="navigate">点我查看温度</button>       //绑定跳转函数，可以跳转到温度页面
+<view class="content">        //插入背景图片
 	
 	<image class='background' src="/rain.jpg" mode="aspectFill"></image>
 	
 </view>
-<view class="sstyle">
+<view class="sstyle"> 
   湿度
-</view>
-<view class="sstyle">{{result}}</view>
-<view wx:if="{{result>20}}" class="sstyle">该浇水啦</view>
+</view> 
+<view class="sstyle">{{result}}</view>                      //将湿度结果显示到页面上
+<view wx:if="{{result>30}}" class="sstyle">该浇水啦</view>         //湿度大于30显示该浇水了
 
 
 
