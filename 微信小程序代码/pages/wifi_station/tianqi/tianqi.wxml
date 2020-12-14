@@ -1,8 +1,8 @@
-<button class="btn1" bindtap="navigate1">点我查看湿度</button>
-<view class="content">
+<button class="btn1" bindtap="navigate1">点我查看湿度</button>    //查看湿度按键，并设定样式，并绑定跳转函数
+<view class="content">                       //背景图片
 	<!--pics文件夹下的background.jpg文件-->
 	<image class='background' src="/goodyun.jpg" mode="aspectFill"></image>
-	<!--页面其它部分-->
+	<!--页面其它部分-->        
 
 </view>
 
@@ -11,6 +11,6 @@
 </view>
 
 
-<view class="style">{{result}}</view>
-<view wx:if="{{result>20}}" class="style">该降温啦</view>
+<view class="style">{{result}}</view>                     //后台的温度数据显示在前端
+<view wx:if="{{result>22}}" class="style">该降温啦</view>    //温度大于22提醒该降温啦
 
