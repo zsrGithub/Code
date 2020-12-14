@@ -1,3 +1,4 @@
+//包含的头文件
 #include "ESP8266.h"
 #include "dht11.h"
 #include "SoftwareSerial.h"
@@ -5,6 +6,7 @@
 #include "stdlib.h"
 #include "U8glib.h"
 
+//显示在OLED上所需的
 static const unsigned char wendu[3][32] PROGMEM={
 {0x00,0x00,0xC4,0x1F,0x48,0x10,0x48,0x10,0xC1,0x1F,0x42,0x10,0x42,0x10,0xC8,0x1F,
 0x08,0x00,0xE4,0x3F,0x27,0x25,0x24,0x25,0x24,0x25,0x24,0x25,0xF4,0x7F,0x00,0x00},/*"温",0*/
@@ -21,11 +23,11 @@ static const unsigned char wendu[3][32] PROGMEM={
 
 //配置ESP8266WIFI设置
 #define SSID "HUAWEI Mate 30 5G"
-#define PASSWORD "77777777"  
+#define PASSWORD "*********"  
 #define HOST_NAME "api.heclouds.com"  
-#define DEVICE_ID "642856759"       
+#define DEVICE_ID "**********"       
 #define HOST_PORT (80)              
-String APIKey = "j5M=Gu7Te=MPxvrEtaAfuOSMS1s=";
+String APIKey = "******************";
 
 #define INTERVAL_SENSOR 5000 
 
@@ -166,12 +168,15 @@ void loop(){
     net_time1 = millis();
   }
   
+ //水阀的控制（可按需更改）
     float n =(float)DHT11.temperature;
-    if(n>=20.00)
+    float m = (float)DHT11.humidity;
+    if(n>=20.00&&m<50.00)
     {
      digitalWrite(10,HIGH);
       }
-      
+   
+ //OLED运行代码
     u8g.firstPage();  
     do {
       u8g.setFont(u8g_font_7x13);
