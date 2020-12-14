@@ -1,5 +1,5 @@
 const devicesId = "6594865436" // OneNet的devicesId 
-const api_key = "=" // OneNet的 api-key
+const api_key = "********" // OneNet的 api-key
 
 Page({
   data: {
@@ -27,15 +27,14 @@ Page({
    * @description 页面加载生命周期
    */
   onLoad: function () {
-    console.log(`your deviceId: ${devicesId}, apiKey: ${api_key}`)
-
-    //每隔6s自动获取一次数据进行更新
+    console.log(`your deviceId: ${devicesId}, apiKey: ${api_key}`)//在控制台打印你的devicesiD和apikey
+//打印数据到控制台
     const timer = setInterval(() => {
       this.getDatapoints().then(datapoints => {
         
         console.log(datapoints)
         this.setData({
-          result:datapoints.humidity[18].value
+          result:datapoints.humidity[18].value  //与wxml数据绑定，将湿度显示在小程序前端
           
         })
         
@@ -50,8 +49,8 @@ Page({
   navigate: function() {
     wx.navigateTo({
         url: '../wifi_station/tianqi/tianqi',
-    })
-},//跳转页面函数
+    })   
+},//跳转页面函数，跳转到温度页面
 
   /**
    * 向OneNet请求当前设备的数据点
